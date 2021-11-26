@@ -1,0 +1,36 @@
+.posts {
+	width: 100%;
+	margin-top: 1em;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: stretch;
+	gap: 1em;
+}
+.card {
+	width: 200px;
+	border: 2px solid var(--orange);
+	border-radius: 10px;
+	padding: 1em;
+	background-color: var(--orange);
+	box-shadow: 2px 3px 5px black;
+	justify-content: space-between;
+}
+.card h3 {
+	text-align: center;
+}
+
+.card p {
+	padding-top: 1em;
+	border-top: 1px solid var(--dark-blue);
+}
+
+@media (prefers-color-scheme: dark) {
+	.card {
+		background-color: var(--white);
+		color: var(--black);
+	}
+	.card p {
+		padding-top: 1em;
+		border-top: 1px solid var(--orange);
+	}
+}
