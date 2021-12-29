@@ -42,6 +42,13 @@ a:visited {
 	color: var(--dark-blue);
 }
 
+mark {
+	background-color: var(--orange);
+	color: var(--black);
+	padding: 0.1em 0.2em;
+	border-radius: 3px;
+}
+
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: var(--black);
