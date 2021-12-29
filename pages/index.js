@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import styles from '@/styles/Containers.module.css'
+import Post from '@/components/Post'
+import posts from 'postData'
 
 const Home = () => {
 	return (
@@ -13,9 +15,13 @@ const Home = () => {
 			<main className={styles.main}>
 				<h1 className={styles.title}>Welcome</h1>
 
-				<p className={styles.description}>
-					Get started by heading to <a href='/admin'>/admin</a>
-				</p>
+				{posts.map((post) => {
+					return (
+						<div key={post.time} className={styles.post}>
+							<Post blocks={post.blocks} />
+						</div>
+					)
+				})}
 			</main>
 
 			<footer className={styles.footer}>Footer</footer>
