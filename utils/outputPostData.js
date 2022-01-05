@@ -23,14 +23,14 @@ const outputData = (block, index) => {
 			}
 		case 'image':
 			return (
-				<div className={styles.image} key={index}>
-					<Image
-						src={block.data.url}
-						layout='fill'
-						objectFit='contain'
-						alt={block.data.alt}
-					/>
-				</div>
+				<Image
+					key={index}
+					src={block.data.url}
+					layout='responsive'
+					width={700}
+					height={450}
+					alt={block.data.alt}
+				/>
 			)
 		case 'paragraph':
 			return <p key={index}>{parse(block.data.text)}</p>
