@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import parse from 'html-react-parser'
 import styles from '@/styles/Post.module.css'
 
@@ -23,12 +22,10 @@ const outputData = (block, index) => {
 			}
 		case 'image':
 			return (
-				<Image
+				<img
+					className={styles.image}
 					key={index}
 					src={block.data.url}
-					layout='responsive'
-					width={700}
-					height={450}
 					alt={block.data.alt}
 				/>
 			)
