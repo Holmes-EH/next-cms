@@ -1,0 +1,29 @@
+.container {
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	position: fixed;
+	top: 0;
+	background-color: var(--white);
+	color: var(--black);
+	z-index: 10;
+}
+.container svg {
+	width: 100px;
+	height: auto;
+	fill: white;
+}
+.navLinkContainer {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+@media (prefers-color-scheme: dark) {
+	.container {
+		background-color: var(--black);
+		color: var(--white);
+	}
+}
