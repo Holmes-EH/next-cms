@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useState } from 'react'
 
-import Card from '@/components/admin/Card'
+import Card from '@/components/Card'
 
 import styles from '@/styles/Containers.module.css'
 import styles2 from '@/styles/admin/Dashboard.module.css'
