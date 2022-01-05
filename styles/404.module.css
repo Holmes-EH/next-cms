@@ -1,0 +1,40 @@
+.numbers {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 10em;
+	perspective: 200px;
+}
+.numbers div {
+	animation: rotate 0.2s ease-out forwards;
+	opacity: 0;
+}
+.numbers div:nth-child(2) {
+	animation-delay: 0.1s;
+}
+.numbers div:nth-child(3) {
+	animation-delay: 0.2s;
+}
+@keyframes rotate {
+	0% {
+		transform: rotateY(90deg) translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: rotateY(0deg) translateY(0px);
+	}
+}
+.explanation a {
+	display: block;
+	width: max-content;
+	text-align: center;
+	padding: 0.2em 1em;
+	outline: 1px solid white;
+	margin: 0.3em auto;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.explanation a:hover {
+	background-color: var(--white);
+	color: var(--black);
+}
