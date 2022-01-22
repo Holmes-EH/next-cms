@@ -1,5 +1,6 @@
 import parse from 'html-react-parser'
 import styles from '@/styles/Post.module.css'
+import { RiDoubleQuotesL } from 'react-icons/ri'
 
 const outputData = (block, index) => {
 	switch (block.type) {
@@ -45,10 +46,39 @@ const outputData = (block, index) => {
 							})}
 						</ul>
 					)
-
+				case 'ordered':
+					return (
+						<ol key={index} style={{ textAlign: 'left' }}>
+							{block.data.items.map((element, liIndex) => {
+								return (
+									<li key={`li-${index}${liIndex}`}>
+										{element}
+									</li>
+								)
+							})}
+						</ol>
+					)
 				default:
 					throw new Error('List block style must be specified')
 			}
+		case 'raw':
+			return (
+				<div
+					key={index}
+					dangerouslySetInnerHTML={{ __html: block.data.html }}
+				/>
+			)
+		case 'quote':
+			return (
+				<figure>
+					<blockquote>
+						<RiDoubleQuotesL />
+						<p>{block.data.text}</p>
+					</blockquote>
+					<figcaption>{block.data.caption}</figcaption>
+				</figure>
+			)
+
 		default:
 			//throw new Error('Block type must be specified')
 			break
