@@ -25,6 +25,7 @@
 		"@editorjs/simple-image": "^1.4.1",
 		"@editorjs/table": "^2.0.1",
 		"@editorjs/warning": "^1.2.0",
+		"framer-motion": "^6.2.1",
 		"html-react-parser": "^1.4.4",
 		"jsonwebtoken": "^8.5.1",
 		"mongoose": "^6.0.13",
