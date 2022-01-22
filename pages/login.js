@@ -16,7 +16,13 @@ const login = () => {
 			>
 				<div className={`${styles.inputField} ${styles.email}`}>
 					<AiOutlineUser />
-					<input type='email' name='email' placeholder='Email' />
+					<input
+						type='email'
+						name='email'
+						placeholder='Email'
+						value={username}
+						onChange={(e) => setUsername(e.target.value)}
+					/>
 				</div>
 				<div className={`${styles.inputField} ${styles.password}`}>
 					<AiFillLock />
@@ -24,6 +30,8 @@ const login = () => {
 						type='password'
 						name='password'
 						placeholder='Password'
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</div>
 				<input type='submit' value='Login' />
