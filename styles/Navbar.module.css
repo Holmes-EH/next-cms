@@ -20,7 +20,9 @@
 	align-items: center;
 	justify-content: space-evenly;
 }
-
+.navLinkContainer a {
+	text-decoration: none;
+}
 @media (prefers-color-scheme: dark) {
 	.container {
 		background-color: var(--black);

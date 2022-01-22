@@ -64,3 +64,13 @@
 	text-align: center;
 	max-width: 71ch;
 }
+.hero {
+	width: 100vw;
+	height: 30vw;
+	position: relative;
+}
+@media screen and (max-width: 650px) {
+	.hero {
+		height: 50vw;
+	}
+}
