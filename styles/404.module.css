@@ -4,6 +4,7 @@
 	align-items: center;
 	font-size: 10em;
 	perspective: 200px;
+	color: var(--dark-blue);
 }
 .explanation a {
 	display: block;
@@ -18,4 +19,10 @@
 .explanation a:hover {
 	background-color: var(--white);
 	color: var(--black);
+}
+
+@media (prefers-color-scheme: dark) {
+	.numbers {
+		color: var(--orange);
+	}
 }
