@@ -29,6 +29,7 @@ h3,
 h4,
 h5 {
 	font-family: 'Montserrat', sans-serif;
+	text-align: center;
 }
 
 p {
@@ -38,20 +39,50 @@ b {
 	font-weight: 700;
 }
 
-a {
-	text-decoration: none;
-}
 a:visited {
 	color: var(--dark-blue);
 }
 
-mark {
-	background-color: var(--orange);
+mark,
+.cdx-marker {
+	background-color: var(--orange) !important;
 	color: var(--black);
-	padding: 0.1em 0.2em;
+	padding: 0.1em 0.2em !important;
 	border-radius: 3px;
+	line-height: 1.5;
 }
 
+code {
+	background-color: var(--dark-blue);
+	padding: 1em;
+	width: 100%;
+	display: block;
+}
+figure {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+figure blockquote:not(.ce-block__content blockquote) {
+	display: flex;
+	align-items: center;
+	padding: 0.5em;
+	margin: 0;
+}
+blockquote p {
+	padding: 0;
+	margin: 0;
+	font-style: italic;
+}
+blockquote svg {
+	font-size: 5em;
+}
+figcaption {
+	flex-grow: 1;
+	text-align: right;
+	padding-right: 2em;
+}
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: var(--black);
@@ -60,5 +91,56 @@ mark {
 	a,
 	a:visited {
 		color: var(--light-gray);
+	}
+}
+
+/* EditorJS Overrides */
+.codex-editor__redactor {
+	padding-bottom: 0 !important;
+}
+.codex-editor--narrow .codex-editor__redactor {
+	margin: 0;
+}
+.ce-block__content,
+.ce-toolbar__content {
+	max-width: 100%;
+	flex-grow: 1;
+}
+.codex-editor--narrow .ce-toolbar__actions {
+	right: 5px;
+}
+.ce-paragraph {
+	font-weight: 300;
+	padding: 0 1em;
+	line-height: unset !important;
+}
+.codex-editor--narrow .ce-block--focused {
+	margin: unset;
+	padding: unset;
+}
+
+@media screen and (min-width: 651px) {
+	.codex-editor--narrow .ce-toolbar__plus {
+		left: -40px;
+	}
+	.ce-toolbar {
+		left: 40px;
+		top: 20px;
+	}
+}
+@media screen and (min-width: 825px) {
+	.codex-editor--narrow .ce-toolbar__actions {
+		right: -25px;
+		top: 10px;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.ce-block--selected .ce-block__content {
+		background-color: var(--dark-blue);
+	}
+	.ce-inline-toolbar__dropdown,
+	.ce-conversion-tool,
+	.ce-conversion-tool--focused {
+		color: var(--black);
 	}
 }

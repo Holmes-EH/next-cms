@@ -5,22 +5,21 @@ import Post from '@/components/Post'
 import dynamic from 'next/dynamic'
 const Editor = dynamic(() => import('@/components/Editor.js'), { ssr: false })
 
-import { createReactEditorJS } from 'react-editor-js'
-
 import posts from 'postData'
 import { BiEdit } from 'react-icons/bi'
 import styles from '@/styles/Post.module.css'
 
 const BlogPost = ({ postData }) => {
 	const router = useRouter()
+
 	const [edit, setEdit] = useState(false)
+	const [dataFromProps, setDataFromProps] = useState(postData)
 
 	if (router.isFallback) {
 		return <div>Loading...</div>
 	}
 
 	if (edit) {
-		const ReactEditorJS = createReactEditorJS()
 		return (
 			<div>
 				<div
@@ -28,10 +27,14 @@ const BlogPost = ({ postData }) => {
 					onClick={() => setEdit(false)}
 				>
 					<BiEdit />
-					Edit
+					Finish Edit
 				</div>
 				<div className={styles.container}>
-					<Editor blocks={postData.blocks} />
+					<Editor
+						blocks={dataFromProps.blocks}
+						updateData={setDataFromProps}
+						setEdit={setEdit}
+					/>
 				</div>
 			</div>
 		)
@@ -44,7 +47,10 @@ const BlogPost = ({ postData }) => {
 				Edit
 			</div>
 			<div className={styles.container}>
-				<Post title={postData.title} blocks={postData.blocks} />
+				<Post
+					title={dataFromProps.title}
+					blocks={dataFromProps.blocks}
+				/>
 			</div>
 		</div>
 	)
