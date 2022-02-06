@@ -6,7 +6,8 @@
 	justify-content: center;
 }
 
-.loginForm input[type='submit'] {
+.loginForm input[type='submit'],
+.register {
 	cursor: pointer;
 	display: block;
 	margin: auto;
@@ -20,7 +21,11 @@
 	text-transform: uppercase;
 	font-weight: bold;
 }
-.loginForm input[type='submit']:hover {
+.register {
+	font-size: 0.9em;
+}
+.loginForm input[type='submit']:hover,
+.register:hover {
 	background-color: unset;
 	color: var(--dark-blue);
 }
@@ -58,12 +63,14 @@
 		color: var(--light-gray);
 		border: 1px solid var(--light-gray);
 	}
-	.loginForm input[type='submit'] {
+	.loginForm input[type='submit'],
+	.register {
 		background-color: var(--orange);
 		color: var(--black);
 		border-color: var(--orange);
 	}
-	.loginForm input[type='submit']:hover {
+	.loginForm input[type='submit']:hover,
+	.register:hover {
 		background-color: none;
 		color: var(--orange);
 	}

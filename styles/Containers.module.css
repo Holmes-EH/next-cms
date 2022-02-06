@@ -65,7 +65,7 @@
 	max-width: 71ch;
 }
 .hero {
-	width: 100vw;
+	width: 100%;
 	height: 30vw;
 	position: relative;
 }
